@@ -5,9 +5,9 @@ ObjectiveC helper categories and classes for cross-project use.
 
 ### Use
 
-Add needed helper classes from Classes folder to your app target
+Add needed helper classes from Classes folder to your app target.
 
-Add test classes for used helper classes to your unittests target (configured with OCHamcrest) if interested.
+Add test classes for helpers you are using to your unittests target (should be configured with OCHamcrest) if interested.
 
 ### Creators
 
