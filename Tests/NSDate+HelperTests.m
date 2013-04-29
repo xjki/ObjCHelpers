@@ -2,13 +2,14 @@
 //  NSDate+HelperTests.m
 //  Created by Jurgis Kirsakmens on 28.10.12.
 //
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 
 // use OCHarmcrest framework and helpers : https://github.com/hamcrest/OCHamcrest
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 #import <SenTestingKit/SenTestingKit.h>
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "NSDate+Helper.h"
 
@@ -32,7 +33,7 @@
 
 
 // Test [NSDate daysFromDate]
--(void) testDaysFromDate {
+- (void) testDaysFromDate {
     // test for today
     NSDate *today = [NSDate date];
     assertThatInt([today daysFromDate:today], equalToInt(0)); 
@@ -76,17 +77,17 @@
 }
 
 
-// Test [NSDate dateToString] and [NSDate stringToDate]
--(void) testDateDateToStringToDate {
+// Test [NSDate dateToString] and [NSDate stringValue] methods
+- (void) testDateDateToStringToDate {
     NSDate *todayDate = [NSDate date];
-	NSString *todayString = [NSDate dateToString:todayDate];
+	NSString *todayString = [todayDate stringValue];
     assertThat(todayString, notNilValue());
     assertThatInt((int)[[NSDate stringToDate:todayString] timeIntervalSince1970],
        equalToInt((int)[todayDate timeIntervalSince1970]));
 
 	NSString *pastdateString = @"1972-05-12 01:54:12";
 	NSDate *pastdateDate = [NSDate stringToDate:pastdateString];
-    assertThat([NSDate dateToString:pastdateDate], equalTo(pastdateString));
+    assertThat([pastdateDate stringValue], equalTo(pastdateString));
 
     // test date component methods
     assertThatInt([pastdateDate getDay], equalToInt(12));
@@ -99,7 +100,7 @@
 
 
 // Test [NSDate JSONStringToDate] method
--(void) testJSONStringToDate {
+- (void) testJSONStringToDate {
 	NSString *dateString = @"1972-05-12 01:54:12";
 	NSString *JSONString = @"1972-05-12T01:54:12";
     assertThat([NSDate stringToDate:dateString], equalTo([NSDate JSONStringToDate:JSONString]));
@@ -108,7 +109,7 @@
 
 
 // Test [NSDate onlyDate] method
--(void) testOnlyDate {
+- (void) testOnlyDate {
 	NSDate *dateWithTime=[NSDate stringToDate:@"1956-11-26 12:05:43"];
     assertThat([NSDate dateWithoutTime:dateWithTime], notNilValue());
     // should be equal to date without time component
@@ -117,7 +118,7 @@
 
 
 // Test [NSDate dateWithLastSecond] method
--(void) testDateWithLastSecond {
+- (void) testDateWithLastSecond {
 	NSDate *date1=[NSDate stringToDate:@"2010-09-04 00:00:00"];
 	NSDate *date2=[NSDate stringToDate:@"2010-09-04 23:59:00"];
 	NSDate *date3=[NSDate stringToDate:@"2012-03-24 00:00:00"];

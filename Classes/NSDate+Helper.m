@@ -28,19 +28,6 @@
 }
 
 
-// Returns string from date according to DATEFORMAT
-+ (NSString *) dateToString :(NSDate *)pDate {
-	NSString *reply;
-	if(pDate == nil)
-		reply = nil;
-	else {
-		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:DATEFORMAT];
-		reply = [dateFormatter stringFromDate:pDate];
-	}
-	return reply;
-}
-
 // Converts string in JSON format (e.g. @"2010-03-08T05:55:47") to NSDate
 + (NSDate*) JSONStringToDate :(NSString*)pJSONdateString {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -73,6 +60,16 @@
 	// return last second of previous day
 	return [date dateByAddingTimeInterval:-1];
 }
+
+
+
+// Returns string from date according to DATEFORMAT
+- (NSString *) stringValue {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:DATEFORMAT];
+    return [dateFormatter stringFromDate:self];
+}
+
 
 // returns number of days (as of number of midnights beween) from another date (absolut value)
 - (int) daysFromDate :(NSDate *)pDate {
