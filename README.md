@@ -5,10 +5,13 @@ ObjectiveC helper categories and classes for cross-project use.
 
 # UIImage helper methods
 
+<pre>
 + (UIImage *) imageWithColor :(UIColor *)pColor;
+</pre>
 
 # NSDate helper methods
 
+<pre>
 + (NSDate *) stringToDate :(NSString *)pString;
 + (NSDate*) JSONStringToDate :(NSString*)pJSONdateString;
 + (NSDate *) dateWithoutTime :(NSDate *)pDate;
@@ -21,6 +24,7 @@ ObjectiveC helper categories and classes for cross-project use.
 - (int) getDay;
 - (int) getMonth;
 - (int) getYear;
+</pre>
 
 ### Use
 

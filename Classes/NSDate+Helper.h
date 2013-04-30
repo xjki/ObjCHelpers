@@ -31,7 +31,7 @@
 + (NSDate *) dateWithoutTime :(NSDate *)pDate;
 
 // Returns date with time component set to last second of the date (23:59:59)
-+ (NSDate *) dateWithLastSecond :(NSDate *)dateTime;
++ (NSDate *) dateWithLastSecond :(NSDate *)pDateTime;
 
 // Returns string from date according to DATEFORMAT
 - (NSString *) stringValue;

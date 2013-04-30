@@ -52,9 +52,9 @@
 
 
 // Returns date with time component set to last second of the date (23:59:59)
-+ (NSDate *) dateWithLastSecond :(NSDate *)dateTime{
++ (NSDate *) dateWithLastSecond :(NSDate *)pDateTime{
     // get todays date (without time component i.e. 00:00:00)
-    NSDate *date = [NSDate dateWithoutTime:dateTime];
+    NSDate *date = [NSDate dateWithoutTime:pDateTime];
     // add 26 hours -1 second to get next day (taking into account potencial daylight saving hour +1h) and calculate date component only
     date = [NSDate dateWithoutTime:[date dateByAddingTimeInterval:26*3600-1]];
 	// return last second of previous day
