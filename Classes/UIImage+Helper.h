@@ -12,7 +12,7 @@
 
 @interface UIImage (Helper)
 
-// Returns 1x1 pixed image with designated color
+// Returns 1x1 pixel image with designated color
 + (UIImage *) imageWithColor :(UIColor *)pColor;
 
 @end
