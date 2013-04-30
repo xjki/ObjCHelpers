@@ -15,7 +15,7 @@ ObjectiveC helper categories and classes for cross-project use.
 + (NSDate *) stringToDate :(NSString *)pString;
 + (NSDate*) JSONStringToDate :(NSString*)pJSONdateString;
 + (NSDate *) dateWithoutTime :(NSDate *)pDate;
-+ (NSDate *) dateWithLastSecond :(NSDate *)dateTime;
++ (NSDate *) dateWithLastSecond :(NSDate *)pDate;
 - (NSString *) stringValue;
 - (int) daysFromDate :(NSDate *)pDate;
 - (int) getSecond;
