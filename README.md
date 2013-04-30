@@ -3,6 +3,25 @@ ObjCHelpers
 
 ObjectiveC helper categories and classes for cross-project use.
 
+# UIImage helper methods
+
++ (UIImage *) imageWithColor :(UIColor *)pColor;
+
+# NSDate helper methods
+
++ (NSDate *) stringToDate :(NSString *)pString;
++ (NSDate*) JSONStringToDate :(NSString*)pJSONdateString;
++ (NSDate *) dateWithoutTime :(NSDate *)pDate;
++ (NSDate *) dateWithLastSecond :(NSDate *)dateTime;
+- (NSString *) stringValue;
+- (int) daysFromDate :(NSDate *)pDate;
+- (int) getSecond;
+- (int) getMinute;
+- (int) getHour;
+- (int) getDay;
+- (int) getMonth;
+- (int) getYear;
+
 ### Use
 
 Add needed helper classes from Classes folder to your app target.
